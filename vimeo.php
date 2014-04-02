@@ -38,8 +38,7 @@ class Vimeo
      * @param [type] $client_secret [description]
      * @param [type] $access_token  [description]
      */
-    public function __construct($client_id, $client_secret, $access_token = null)
-    {
+    public function __construct($client_id, $client_secret, $access_token = null) {
         $this->_client_id = $client_id;
         $this->_client_secret = $client_secret;
         $this->_access_token = $access_token;
@@ -52,8 +51,7 @@ class Vimeo
      * @param  string $method [description]
      * @return [type]         [description]
      */
-    public function request($url, $params = array(), $method = 'GET')
-    {
+    public function request($url, $params = array(), $method = 'GET') {
         // add accept header hardcoded to version 3.0
         $headers[] = 'Accept: ' . self::VERSION_STRING;
         $headers[] = 'User-Agent: ' . self::USER_AGENT;
@@ -141,8 +139,7 @@ class Vimeo
      * [getToken description]
      * @return [type] [description]
      */
-    public function getToken()
-    {
+    public function getToken() {
         return $this->_access_token;
     }
 
@@ -150,8 +147,7 @@ class Vimeo
      * [setToken description]
      * @param [type] $access_token [description]
      */
-    public function setToken($access_token)
-    {
+    public function setToken($access_token) {
         $this->_access_token = $access_token;
     }
 
@@ -160,8 +156,7 @@ class Vimeo
      * @param  [type] $headers [description]
      * @return [type]          [description]
      */
-    public static function parse_headers($headers)
-    {
+    public static function parse_headers($headers) {
         $final_headers = array();
         $list = explode("\n", trim($headers));
 
